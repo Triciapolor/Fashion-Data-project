@@ -1,4 +1,4 @@
-# Importing the necessary libraries
+ Importing the necessary libraries
 import tensorflow as tf
 
 # Loading the Fashion-MNIST dataset downloadable from tensorflow
@@ -8,7 +8,7 @@ data = tf.keras.datasets.fashion_mnist.load_data()
 # Normalizing the pixel value for the maximum allowes, in this case it will be 8-bit
 X_train = X_train / 255.0
 X_test = X_test / 255.0
-# Define a CNN model
+# Defining a CNN model
 model = tf.keras.models.Sequential([
     tf.keras.layers.Conv2D(32, (3,3), activation="relu", input_shape=(28,28,1)),
     tf.keras.layers.MaxPooling2D((2,2)),
@@ -20,7 +20,7 @@ model = tf.keras.models.Sequential([
     tf.keras.layers.Dense(10, activation="softmax")
 ])
 
-# Compile the model
+# Compiling the model
 model.compile(optimizer="adam", loss="sparse_categorical_crossentropy", metrics=["accuracy"])
 
 # Training the model on the Fashion-MNIST dataset
